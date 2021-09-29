@@ -1,0 +1,201 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="~/WebApp/Assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/WebApp/Assets/css/animations.css">
+    <link rel="stylesheet" href="~/WebApp/Assets/css/fonts.css">
+    <link rel="stylesheet" href="~/WebApp/Assets/css/main.css">
+    <link rel="stylesheet" href="~/WebApp/Assets/css/shop.css">
+    <script src="~/WebApp/Assets/js/vendor/modernizr-2.6.2.min.js"></script>
+    <link rel="icon" type="image/png" sizes="32x32" href="~/WebApp/Assets/images/ifcon/android-icon-48x48.png">
+    <title>Pharma.com | Pharmaceutical Company</title>
+</head>
+<body>
+    <div class="preloader">
+        <div class="preloader_image"></div>
+    </div>
+    <div id="canvas">
+        <div id="box_wrapper">
+            <section class="page_topline cs main_color2 table_section table_section_sm section_padding_top_5 section_padding_bottom_5">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-8 text-center text-sm-left">
+                            <div> <i class="fa fa-clock-o rightpadding_5" aria-hidden="true"></i> Opening Hours: Mon - Sat 8.00 - 18.00 </div>
+                        </div>
+                        <div class="col-sm-4 text-center text-sm-right greylinks">
+                            <span class="rightpadding_10">Follow Us:</span> <a class="social-icon color-icon soc-facebook"  title="Facebook"></a> <a class="social-icon color-icon soc-twitter" title="Twitter"></a> <a class="social-icon color-icon soc-google"
+                                                                                                                                                                                                                                                                     title="Gmail"></a> <a class="social-icon color-icon soc-linkedin"  title="LinkedIn"></a> <a class="social-icon color-icon soc-youtube" title="Youtube"></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="page_toplogo table_section table_section_md ls section_padding_top_25 section_padding_bottom_25">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3 text-center text-md-left">
+                            <a asp-action="Index" asp-controller="Home" class="logo top_logo">
+                                <img src="~/WebApp/Assets/images/logo.png" alt="">
+                            </a>
+                        </div>
+                        <div class="col-md-9 text-center text-md-right">
+                            <div class="inline-teasers-wrap">
+                                <div class="teaser small-teaser media">
+                                    <div class="media-left media-middle">
+                                        <div class="teaser_icon size_small border_icon highlight2 rounded"> <i class="rt-icon2-pen"></i> </div>
+                                    </div>
+                                    <div class="media-body media-middle">
+                                        <h4>(021)-9876545</h4>
+                                        <p class="greylinks fontsize_12"> <a href="https://html.modernwebtemplates.com/cdn-cgi/l/email-protection#0e7e666f7c636f6d61634e6b766f637e626b206d6163"><span class="__cf_email__" data-cfemail="9bebf3fae9f6faf8f4f6dbfee3faf6ebf7feb5f8f4f6">[email&#160;protected]</span></a> </p>
+                                    </div>
+                                </div>
+                                <div class="teaser small-teaser media">
+                                    <div class="media-left media-middle">
+                                        <div class="teaser_icon size_small border_icon highlight2 rounded"> <i class="rt-icon2-map-pin"></i> </div>
+                                    </div>
+                                    <div class="media-body media-middle">
+                                        <h4>Karachi Pakistan</h4>
+                                        <p class="greylinks fontsize_12"> Korangi Industrial Area</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <header class="page_header header_color toggler_left">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 display_table">
+                            <div class="header_mainmenu display_table_cell">
+                                <!-- main nav start -->
+                                <nav class="mainmenu_wrapper">
+                                    <ul class="mainmenu nav sf-menu">
+                                        <li class="active">
+                                            <a asp-action="Index" asp-controller="Home">Home</a>
+                                        </li>
+                                        <li>
+                                            <a asp-action="About" asp-controller="Home">About Us</a>
+                                        </li>
+                                        <li>
+                                            <a asp-action="Product" asp-controller="Home">Products</a>
+                                            <ul>
+                                                <li><a asp-action="CapsuleEncapsulation" asp-controller="Home">Capsule/Encapsulation</a></li>
+                                                <li><a asp-action="Tablet" asp-controller="Home">Tablet</a></li>
+                                                <li><a asp-action="LiquidFilling" asp-controller="Home">Liquid Filling</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a asp-action="Contact" asp-controller="Home">Contact Us</a>
+
+                                        </li>
+
+                                        <li>
+                                            <a asp-action="Create" asp-controller="Career">Career</a>
+                                        </li>
+                                        <li>
+                                            <a asp-action="Create" asp-controller="Quote">Quote</a>
+                                        </li>
+                                        
+                                      
+                                    </ul>
+                                </nav>
+                                <span class="toggle_menu"><span></span></span>
+                            </div>
+                            <div class="header_right_buttons cs display_table_cell text-right">
+
+                                <ul class="inline-list menu greylinks">
+
+                                    @if (User.Identity.IsAuthenticated)
+                                    {
+                                    <li class="nav-item">
+                                        <strong style="color: #ec5c42;">Welcome </strong><i class="fa fa-user"></i> @User.Identity.Name 
+                                        <a asp-area="" asp-controller="Account" asp-action="Logout" class="theme_button color2 inverse topmargin_1 bottommargin_1">
+                                            Logout
+                                        </a>
+                                    </li>
+                                    }
+                                    else{
+                                    <li>
+                                        <a asp-action="Login" asp-controller="Account" class="theme_button color2 inverse topmargin_1 bottommargin_1" >Login
+                                            
+                                        </a>
+                                    </li>
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            @RenderBody()
+
+            <footer class="page_footer ds color section_padding_top_100 section_padding_bottom_65 table_section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-6">
+                            <div class="widget widget_text">
+                                <a asp-action="Index" asp-controller="Home"  class="logo vertical_logo bottommargin_20">
+                                    <img src="~/WebApp/Assets/images/logo-light.png" alt="">
+                                </a>
+                                <p>Offer unique class veterinary products; developed, produced and delivered in a creative and innovative way, with high quality standards and digital communication that allow us to position and consolidate locally through the formal establishment of strategic alliances.</p>
+                                <p class="darklinks"> <a class="social-icon soc-facebook" href="#" title="Facebook"></a> <a class="social-icon soc-twitter" href="#" title="Twitter"></a> <a class="social-icon soc-google" href="#" title="Twitter"></a> <a class="social-icon soc-linkedin" href="#" title="Twitter"></a>									<a class="social-icon soc-youtube" href="#" title="Youtube"></a> </p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="widget widget_text topmargin_25">
+                                <h4 class="widget-title">Contact Us</h4>
+                                <div class="media">
+                                    <div class="media-left rightpadding_10"> <i class="fa fa-map-marker highlight" aria-hidden="true"></i> </div>
+                                    <div class="media-body"> Korangi Industrial Area Karachi Pakistan </div>
+                                </div>
+                                <div class="media">
+                                    <div class="media-left rightpadding_10"> <i class="fa fa-phone highlight" aria-hidden="true"></i> </div>
+                                    <div class="media-body"> (021)-9876545 </div>
+                                </div>
+                                <div class="media">
+                                    <div class="media-left rightpadding_10"> <i class="fa fa-pencil highlight" aria-hidden="true"></i> </div>
+                                    <div class="media-body highlight2links"> <a href="https://html.modernwebtemplates.com/cdn-cgi/l/email-protection#50203831223d31333f3d103528313d203c357e333f3d"><span class="__cf_email__" data-cfemail="73031b12011e12101c1e33160b121e031f165d101c1e">[email&#160;protected]</span></a> </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="widget widget_twitter topmargin_25">
+                                <h4 class="widget-title">Twitter Widget</h4>
+                                <div class="twitter highlight2links"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 text-center text-sm-left">
+                            <div class="widget widget_instagram topmargin_25">
+                                <h4 class="widget-title">Instagram</h4>
+                                <div class="instafeed"> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <section class="ds color darker page_copyright section_padding_15">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 text-center">
+                            <p class="fontsize_12">&copy; Copyright 2021 All Rights Reserved.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <script data-cfasync="false" src="~/WebApp/Assets/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="~/WebApp/Assets/js/compressed.js"></script>
+    <script src="~/WebApp/Assets/js/main.js"></script>
+
+
+
+
+</body>
+</html>

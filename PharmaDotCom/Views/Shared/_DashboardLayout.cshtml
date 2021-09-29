@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Dashboard | Pharma.com</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="~/WebApp/Assets/images/ifcon/android-icon-48x48.png">
+    <!-- jvectormap -->
+    <link href="~/AdminDashboard/Assets/plugins/jvectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet">
+
+    <!-- App css -->
+    <link href="~/AdminDashboard/Assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/AdminDashboard/Assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/AdminDashboard/Assets/css/metisMenu.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/AdminDashboard/Assets/plugins/daterangepicker/daterangepicker.css" rel="stylesheet" type="text/css" />
+    <link href="~/AdminDashboard/Assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+    <!-- Left Sidenav -->
+    <div class="left-sidenav">
+        <!-- LOGO -->
+        <div class="brand">
+            <a asp-action="index" asp-controller="Dashboard" class="logo">
+                <span>
+                    <img src="~/WebApp/Assets/images/logo.png" alt="logo-small" class="logo-large">
+                </span>
+               
+            </a>
+        </div>
+        <!--end logo-->
+        <div class="menu-content h-100" data-simplebar>
+            <ul class="metismenu left-sidenav-menu">
+                <li class="menu-label mt-0">Main</li>
+
+
+                <li>
+                    <a href="javascript: void(0);"><i data-feather="grid" class="align-self-center menu-icon"></i><span>Mail</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                    <ul class="nav-second-level" aria-expanded="false">
+                        <li>
+                                <li><a asp-action="Index" asp-controller="mailing">Inbox</a></li>
+                                
+                           </ul>
+                        </li>
+           </ul>
+            
+            
+        </div>
+    </div>
+    <!-- end left-sidenav-->
+
+    <div class="page-wrapper">
+        <!-- Top Bar Start -->
+        <div class="topbar">
+            <!-- Navbar -->
+            <nav class="navbar-custom">
+                <ul class="list-unstyled topbar-nav float-end mb-0">
+
+                        <li>
+                            <a asp-action="Index" asp-controller="AdminLogin" class="btn btn-primary btn-sm center-block">
+                                Logout
+
+                            </a>
+                        </li>
+                    
+                </ul><!--end topbar-nav-->
+
+                <ul class="list-unstyled topbar-nav mb-0">
+                    <li>
+                        <button class="nav-link button-menu-mobile">
+                            <i data-feather="menu" class="align-self-center topbar-icon"></i>
+                        </button>
+                    </li>
+
+                </ul>
+            </nav>
+            <!-- end navbar-->
+        </div>
+        <!-- Top Bar End -->
+        @RenderBody()
+    </div>
+
+    <!--end footer-->
+    <footer class="footer text-center text-sm-start">
+        &copy;
+        <script>
+            document.write(new Date().getFullYear())
+        </script> PharmaDotCom <span class="text-muted d-none d-sm-inline-block float-end">
+            Crafted with <i class="mdi mdi-heart text-danger"></i> by FarhanMaqsood
+        </span>
+    </footer>
+    <!-- jQuery  -->
+    <script src="~/AdminDashboard/Assets/js/jquery.min.js"></script>
+    <script src="~/AdminDashboard/Assets/js/bootstrap.bundle.min.js"></script>
+    <script src="~/AdminDashboard/Assets/js/metismenu.min.js"></script>
+    <script src="~/AdminDashboard/Assets/js/waves.js"></script>
+    <script src="~/AdminDashboard/Assets/js/feather.min.js"></script>
+    <script src="~/AdminDashboard/Assets/js/simplebar.min.js"></script>
+    <script src="~/AdminDashboard/Assets/js/moment.js"></script>
+    <script src="~/AdminDashboard/Assets/plugins/daterangepicker/daterangepicker.js"></script>
+
+    <script src="~/AdminDashboard/Assets/plugins/apex-charts/apexcharts.min.js"></script>
+    <script src="~/AdminDashboard/Assets/plugins/jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
+    <script src="~/AdminDashboard/Assets/plugins/jvectormap/jquery-jvectormap-us-aea-en.js"></script>
+    <script src="~/AdminDashboard/Assets/pages/jquery.analytics_dashboard.init.js"></script>
+
+    <!-- App js -->
+    <script src="~/AdminDashboard/Assets/js/app.js"></script>
+</body>
+</html>

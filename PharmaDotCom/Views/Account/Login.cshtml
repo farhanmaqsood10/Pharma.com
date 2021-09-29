@@ -1,0 +1,38 @@
+﻿@model PharmaDotCom.Models.SignIn
+
+@{
+    
+    Layout = "~/Views/Shared/_SignInSignUpLayout.cshtml";
+}
+
+<div class="form-wrapper">
+
+
+    <!-- logo -->
+    <div id="logo">
+        <img class="logo" src="~/WebApp/Assets/images/logo.png" alt="image">
+    </div>
+    <h5>Sign in</h5>
+    <!-- form -->
+    <form asp-action="Login">
+        <div class="form-group">
+            <input type="email" class="form-control" asp-for="Email" placeholder=" Enter Email">
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" asp-for="Password" placeholder="Enter Password" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+        <div class="custom-control custom-checkbox">
+            <input type="checkbox" asp-for="RememberMe" class="bg-primary-gradient" checked="" id="customCheck1">
+            <label ></label>@Html.DisplayNameFor(signIn => signIn.RememberMe)
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+        
+        <p class="text-muted">Don't have an account?</p>
+        <a asp-action="Register" asp-controller="Account" class="btn btn-outline-light btn-sm">Register now!</a>
+    </form>
+    <!-- ./ form -->
+
+
+</div>

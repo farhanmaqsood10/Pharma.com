@@ -1,0 +1,99 @@
+﻿@model PharmaDotCom.Models.Career
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_PharmaDotComLayout.cshtml";
+}
+
+<h4>Job Application Form</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="FullName" class="control-label"></label><span class="required">*</span>
+                <input asp-for="FullName" class="form-control" required />
+                <span asp-validation-for="FullName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PhoneNumber" class="control-label"></label><span class="required">*</span>
+                <input asp-for="PhoneNumber" class="form-control" aria-required="true" />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmailAddress" class="control-label"></label><span class="required">*</span>
+                <input asp-for="EmailAddress" class="form-control" aria-required="true" />
+                <span asp-validation-for="EmailAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CompanyName" class="control-label"></label><span class="required">*</span>
+                <input asp-for="CompanyName" class="form-control" aria-required="true" />
+                <span asp-validation-for="CompanyName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CurrentPost" class="control-label"></label><span class="required">*</span>
+                <input asp-for="CurrentPost" class="form-control" aria-required="true" />
+                <span asp-validation-for="CurrentPost" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="JobField" class="control-label"></label><span class="required">*</span>
+                <input asp-for="JobField" class="form-control" aria-required="true" />
+                <span asp-validation-for="JobField" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address" class="control-label"></label><span class="required">*</span>
+                <input asp-for="Address" class="form-control" aria-required="true" />
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Country" class="control-label"></label><span class="required">*</span>
+                <input asp-for="Country" class="form-control" aria-required="true" />
+                <span asp-validation-for="Country" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="State" class="control-label"></label><span class="required">*</span>
+                <input asp-for="State" class="form-control" aria-required="true" />
+                <span asp-validation-for="State" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="City" class="control-label"></label><span class="required">*</span>
+                <input asp-for="City" class="form-control" aria-required="true" />
+                <span asp-validation-for="City" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PostalCode" class="control-label"></label><span class="required">*</span>
+                <input asp-for="PostalCode" class="form-control" aria-required="true" />
+                <span asp-validation-for="PostalCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Degree" class="control-label"></label><span class="required">*</span>
+                <input asp-for="Degree" class="form-control" aria-required="true" />
+                <span asp-validation-for="Degree" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="University" class="control-label"></label><span class="required">*</span>
+                <input asp-for="University" class="form-control" aria-required="true" />
+                <span asp-validation-for="University" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="College" class="control-label"></label><span class="required">*</span>
+                <input asp-for="College" class="form-control" aria-required="true" />
+                <span asp-validation-for="College" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ChooseFile" class="form-label">Default file input example</label>
+                <input class="form-control" asp-for="ChooseFile" type="file" id="formFile">
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Apply Now" class="theme_button color2 inverse topmargin_1 bottommargin_1" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Posts</a>
+</div>
+

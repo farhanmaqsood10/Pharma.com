@@ -1,0 +1,40 @@
+﻿@model PharmaDotCom.Models.Mailing
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Mail</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.To)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.To)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Subject)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Subject)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Text)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Text)
+        </dd>
+    </dl>
+</div>
+<div>
+    <form asp-action="Details">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Details" class="btn btn-secondary" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>
