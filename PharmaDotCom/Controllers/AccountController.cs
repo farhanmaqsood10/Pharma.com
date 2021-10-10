@@ -20,10 +20,7 @@ namespace PharmaDotCom.Controllers
             _userManager = userManager;
             _signInManager = signInManager;
         }
-        public IActionResult Index()
-        {
-            return View();
-        }
+       
         public IActionResult Register()
         {
             return View();
@@ -77,7 +74,16 @@ namespace PharmaDotCom.Controllers
 
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("Index", "Home");
+                    if (signIn.Email == "admin@gmail.com")
+                    {
+                        return RedirectToAction("Index", "Mailing");
+
+                    }
+                    else
+                    {
+                        return RedirectToAction("Index", "Home");
+
+                    }
                 }
 
                 ModelState.AddModelError(string.Empty, "Invalid Login Attempt");

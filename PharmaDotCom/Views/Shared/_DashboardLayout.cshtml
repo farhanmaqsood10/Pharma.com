@@ -22,7 +22,7 @@
     <div class="left-sidenav">
         <!-- LOGO -->
         <div class="brand">
-            <a asp-action="index" asp-controller="Dashboard" class="logo">
+            <a asp-action="Index" asp-controller="Mailing" class="logo">
                 <span>
                     <img src="~/WebApp/Assets/images/logo.png" alt="logo-small" class="logo-large">
                 </span>
@@ -36,14 +36,30 @@
 
 
                 <li>
-                    <a href="javascript: void(0);"><i data-feather="grid" class="align-self-center menu-icon"></i><span>Mail</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                    <a href="javascript: void(0);"><i class="mdi mdi-email-box"></i><span>Mail</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
                     <ul class="nav-second-level" aria-expanded="false">
                         <li>
-                                <li><a asp-action="Index" asp-controller="mailing">Inbox</a></li>
-                                
-                           </ul>
-                        </li>
-           </ul>
+                        <li><a asp-action="Index" asp-controller="mailing">Inbox</a></li>
+
+                    </ul>
+                </li>
+                <li>
+                    <a asp-action="Index" asp-controller="quote"><i class="mdi mdi-comment-quote"></i><span>Quotes</span><span><i></i></span></a>
+                    <ul class="nav-second-level" aria-expanded="false">
+                        <li>
+                        
+
+                    </ul>
+                </li>
+                <li>
+                    <a asp-action="Index" asp-controller="career"><i class="mdi mdi-application"></i><span>Job Applications</span><span><i></i></span></a>
+                    <ul class="nav-second-level" aria-expanded="false">
+                        <li>
+                        
+
+                    </ul>
+                </li>
+            </ul>
             
             
         </div>
@@ -57,14 +73,30 @@
             <nav class="navbar-custom">
                 <ul class="list-unstyled topbar-nav float-end mb-0">
 
-                        <li>
-                            <a asp-action="Index" asp-controller="AdminLogin" class="btn btn-primary btn-sm center-block">
+                    <li>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                        <li class="nav-item">
+                            <strong style="color: #ec5c42;">Welcome </strong><i class="fa fa-user"></i> @User.Identity.Name
+                       
+                            <a asp-area="" asp-controller="Account" asp-action="Logout" class="btn btn-primary">
                                 Logout
+                            </a>
+                        
+                        </li>
+                    }
+                    else
+                    {
+                        <li>
+                            <a asp-action="Login" asp-controller="Account" class="theme_button color2 inverse topmargin_1 bottommargin_1">
+                                Login
 
                             </a>
                         </li>
-                    
-                </ul><!--end topbar-nav-->
+                    }
+                        </li>
+
+                    </ul><!--end topbar-nav-->
 
                 <ul class="list-unstyled topbar-nav mb-0">
                     <li>
@@ -82,14 +114,7 @@
     </div>
 
     <!--end footer-->
-    <footer class="footer text-center text-sm-start">
-        &copy;
-        <script>
-            document.write(new Date().getFullYear())
-        </script> PharmaDotCom <span class="text-muted d-none d-sm-inline-block float-end">
-            Crafted with <i class="mdi mdi-heart text-danger"></i> by FarhanMaqsood
-        </span>
-    </footer>
+    
     <!-- jQuery  -->
     <script src="~/AdminDashboard/Assets/js/jquery.min.js"></script>
     <script src="~/AdminDashboard/Assets/js/bootstrap.bundle.min.js"></script>

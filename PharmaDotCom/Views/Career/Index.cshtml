@@ -2,14 +2,12 @@
 
 @{
     ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_PharmaDotComLayout.cshtml";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
 }
 
+<h3>Job Appliction</h3>
 
 
-<p>
-    <a asp-action="Create" class="theme_button color2 inverse topmargin_1 bottommargin_1">Apply Now</a>
-</p>
 <table class="table">
     <thead>
         <tr>
@@ -107,10 +105,10 @@
                 @Html.DisplayFor(modelItem => item.College)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ChooseFile)
+                <a href="@item.ChooseFile"> @Html.DisplayFor(modelItem => item.ChooseFile)</a>
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                
                 <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
                 <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
             </td>

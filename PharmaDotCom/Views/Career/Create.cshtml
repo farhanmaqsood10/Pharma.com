@@ -4,96 +4,181 @@
     ViewData["Title"] = "Create";
     Layout = "~/Views/Shared/_PharmaDotComLayout.cshtml";
 }
+<section class="page_breadcrumbs ds color parallax section_padding_top_75 section_padding_bottom_75">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h2>Job Appliction</h2>
+                <ol class="breadcrumb highlightlinks">
+                    <li>
+                        <a asp-action="Create" asp-controller="Career">
+                            Career
+                        </a>
+                    </li>
 
-<h4>Job Application Form</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="FullName" class="control-label"></label><span class="required">*</span>
-                <input asp-for="FullName" class="form-control" required />
-                <span asp-validation-for="FullName" class="text-danger"></span>
+                    <li class="active">Job Appliction</li>
+                </ol>
             </div>
-            <div class="form-group">
-                <label asp-for="PhoneNumber" class="control-label"></label><span class="required">*</span>
-                <input asp-for="PhoneNumber" class="form-control" aria-required="true" />
-                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="EmailAddress" class="control-label"></label><span class="required">*</span>
-                <input asp-for="EmailAddress" class="form-control" aria-required="true" />
-                <span asp-validation-for="EmailAddress" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CompanyName" class="control-label"></label><span class="required">*</span>
-                <input asp-for="CompanyName" class="form-control" aria-required="true" />
-                <span asp-validation-for="CompanyName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CurrentPost" class="control-label"></label><span class="required">*</span>
-                <input asp-for="CurrentPost" class="form-control" aria-required="true" />
-                <span asp-validation-for="CurrentPost" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="JobField" class="control-label"></label><span class="required">*</span>
-                <input asp-for="JobField" class="form-control" aria-required="true" />
-                <span asp-validation-for="JobField" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Address" class="control-label"></label><span class="required">*</span>
-                <input asp-for="Address" class="form-control" aria-required="true" />
-                <span asp-validation-for="Address" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Country" class="control-label"></label><span class="required">*</span>
-                <input asp-for="Country" class="form-control" aria-required="true" />
-                <span asp-validation-for="Country" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="State" class="control-label"></label><span class="required">*</span>
-                <input asp-for="State" class="form-control" aria-required="true" />
-                <span asp-validation-for="State" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="City" class="control-label"></label><span class="required">*</span>
-                <input asp-for="City" class="form-control" aria-required="true" />
-                <span asp-validation-for="City" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PostalCode" class="control-label"></label><span class="required">*</span>
-                <input asp-for="PostalCode" class="form-control" aria-required="true" />
-                <span asp-validation-for="PostalCode" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Degree" class="control-label"></label><span class="required">*</span>
-                <input asp-for="Degree" class="form-control" aria-required="true" />
-                <span asp-validation-for="Degree" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="University" class="control-label"></label><span class="required">*</span>
-                <input asp-for="University" class="form-control" aria-required="true" />
-                <span asp-validation-for="University" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="College" class="control-label"></label><span class="required">*</span>
-                <input asp-for="College" class="form-control" aria-required="true" />
-                <span asp-validation-for="College" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ChooseFile" class="form-label">Default file input example</label>
-                <input class="form-control" asp-for="ChooseFile" type="file" id="formFile">
-            </div>
-
-            <div class="form-group">
-                <input type="submit" value="Apply Now" class="theme_button color2 inverse topmargin_1 bottommargin_1" />
-            </div>
-        </form>
+        </div>
     </div>
-</div>
+</section>
+<section class="ls section_padding_top_150 section_padding_bottom_130">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h2 class="section_header">Work With Us</h2>
+                <p>
+                    Landjaeger ham hock corned beef chicken venison pancetta pastrami sausage kevin swine tri-tip tongue turkey pork. Swine turducken cupim meatloaf chuck sirloin jerky capicola boudin pastrami sausage beef tongue. Bacon andouille ham, landjaeger tail
+                    shoulder pork loin frankfurter. Ham hock burgdoggen ham pig pastrami, chuck beef shoulder sirloin capicola short loin. Pastrami burgdoggen biltong meatball, sausage turducken landjaeger kielbasa boudin. Cow meatloaf jerky shoulder jowl kevin biltong
+                    flank bresaola ball tip tri-tip pastrami.
+                </p>
+                <p>
+                    Kielbasa biltong cupim frankfurter swine filet mignon jerky cow chuck chicken prosciutto short ribs capicola alcatra. Corned beef jowl landjaeger kevin jerky, frankfurter tri-tip hamburger strip steak pork belly pig rump bresaola. Frankfurter spare
+                    ribs tri-tip cupim ham turducken meatloaf turkey sirloin tail, ribeye sausage pork flank chuck. Sausage chuck short ribs boudin burgdoggen capicola tail salami meatloaf turducken. Turducken fatback beef kielbasa pig doner ham hock jerky alcatra
+                    ribeye pancetta tenderloin andouille leberkas.
+                </p>
+                <h4>Open Positions:</h4>
+                <h4 class="highlight">Undergraduate Biology Research Assistant (Internship)</h4>
+                <p>
+                    To apply for a posted position, please email your CV to <a href="https://html.modernwebtemplates.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="402832002332292e25342923336e232f2d">[email&#160;protected]</a> along with a cover letter outlining how you are a fit for the position. We review all CVs submitted for posted positions, but we are unable to respond individually to all
+                    applications.
+                </p>
+                <p>
+                    For Recruiters: It is Crinetics’ policy that CVs will only be accepted from recruiters if a signed agreement is in place and the recruiter has been authorized by the company to search for a specific position. Unsolicited resumes received by Crinetics
+                    from recruiters do not establish a relationship between the recruiter and Crinetics and will not obligate Crinetics to pay any fees should we hire an individual from such resumes.s
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<h4 style="text-align: center;">Job Application Form</h4>
+<hr />
+<div class="container">
+    <form method="post" enctype="multipart/form-data">
+        <div class="row">
+            <div class="col-md-12">
+                <h4>Personal Details</h4>
+                </div>
+            </div>
+        <div class="row">
+            <div class="col-md-3">
 
-<div>
-    <a asp-action="Index">Posts</a>
-</div>
+
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <input asp-for="FullName" class="form-control"placeholder="Full Name" />
+                    <span asp-validation-for="FullName" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <input asp-for="PhoneNumber" class="form-control" aria-required="true" placeholder="Phone Number" />
+                    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <input asp-for="EmailAddress" class="form-control" aria-required="true" placeholder="EmailAddress" />
+                    <span asp-validation-for="EmailAddress" class="text-danger"></span>
+                </div>
+            </div>
+
+
+            <div class="col-md-3">
+                <div class="form-group">
+                    <input asp-for="CompanyName" class="form-control" aria-required="true" placeholder="Company Name" />
+                    <span asp-validation-for="CompanyName" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="form-group">
+                    <input asp-for="CurrentPost" class="form-control" aria-required="true" placeholder="Current Post" />
+                    <span asp-validation-for="CurrentPost" class="text-danger"></span>
+                </div>
+            </div>
+
+
+            <div class="col-md-3">
+                <div class="form-group">
+                    <input asp-for="JobField" class="form-control" aria-required="true" placeholder="Job Field" />
+                    <span asp-validation-for="JobField" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <input asp-for="Address" class="form-control" aria-required="true" placeholder="Address" />
+                    <span asp-validation-for="Address" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <input asp-for="Country" class="form-control" aria-required="true" placeholder="Country" />
+                    <span asp-validation-for="Country" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <input asp-for="State" class="form-control" aria-required="true" placeholder="State" />
+                    <span asp-validation-for="State" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <input asp-for="City" class="form-control" aria-required="true" placeholder="City" />
+                    <span asp-validation-for="City" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <input asp-for="PostalCode" class="form-control" aria-required="true" placeholder="Postal Code" />
+                    <span asp-validation-for="PostalCode" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h4>Education Information</h4>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <input asp-for="Degree" class="form-control" aria-required="true" placeholder="Degree" />
+                    <span asp-validation-for="Degree" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <input asp-for="University" class="form-control" aria-required="true" placeholder="University" />
+                    <span asp-validation-for="University" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <input asp-for="College" class="form-control" aria-required="true" placeholder="College" />
+                    <span asp-validation-for="College" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h4>Resume</h4>
+                </div>
+            </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input class="form-control" asp-for="Resume" placeholder="Choose File">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="submit" value="Apply Now" class="theme_button color2 inverse topmargin_1 bottommargin_1 ml-4" />
+                    </div>
+                </div>
+            </div>
+</form>
+    </div>
+
 

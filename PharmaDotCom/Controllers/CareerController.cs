@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -12,11 +14,13 @@ namespace PharmaDotCom.Controllers
     public class CareerController : Controller
     {
         private readonly PharmaDotComContext _context;
+        private readonly IWebHostEnvironment _webHostEnvironment;
 
-        public CareerController(PharmaDotComContext context)
+        public CareerController(PharmaDotComContext context ,IWebHostEnvironment webHostEnvironment)
         {
             _context = context;
-
+            this._webHostEnvironment = webHostEnvironment;
+            
         }
 
         // GET: career
@@ -54,68 +58,31 @@ namespace PharmaDotCom.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,FullName,PhoneNumber,EmailAddress,CompanyName,CurrentPost,JobField,Address,Country,State,City,PostalCode,Degree,University,College,ChooseFile")] Career career)
+        public async Task<IActionResult> Create([Bind("Id,FullName,PhoneNumber,EmailAddress,CompanyName,CurrentPost,JobField,Address,Country,State,City,PostalCode,Degree,University,College,ChooseFile,Resume")] Career career)
         {
             if (ModelState.IsValid)
             {
+                career.ChooseFile = this.UploadResume(career);
                 _context.Add(career);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                ModelState.Clear();
+                
             }
-            return View(career);
+            return View();
         }
 
-        // GET: career/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        private string UploadResume(Career career)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
+           string folder = "Files/Resume/";
+           folder+= Guid.NewGuid().ToString()+career.Resume.FileName;
+           string myvar = this._webHostEnvironment.WebRootPath;
+           string[] myArr = { myvar, folder };
+           string server = Path.Combine(myArr);
+           career.Resume.CopyTo(new FileStream(server, FileMode.Create));
 
-            var career = await _context.Career.FindAsync(id);
-            if (career == null)
-            {
-                return NotFound();
-            }
-            return View(career);
+           return folder;
         }
-
-        // POST: career/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id, FullName, PhoneNumber, EmailAddress, CompanyName, CurrentPost, JobField, Address, Country, State, City, PostalCode, Degree, University, College, ChooseFile")] Career career)
-        {
-            if (id != career.Id)
-            {
-                return NotFound();
-            }
-
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(career);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!CareerExists(career.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }
-            return View(career);
-        }
-
+         
         // GET: career/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
@@ -133,7 +100,7 @@ namespace PharmaDotCom.Controllers
 
             return View(career);
         }
-
+         
         // POST: career/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]

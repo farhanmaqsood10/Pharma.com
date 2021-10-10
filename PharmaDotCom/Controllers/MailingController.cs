@@ -23,14 +23,6 @@ namespace PharmaDotCom.Controllers
             this._env = env;
             _context = context;
         }
-
-
-
-
-
-       
-
-
         // GET: Mailing
         public async Task<IActionResult> Index()
         {
@@ -83,7 +75,7 @@ namespace PharmaDotCom.Controllers
         {
             string To = mailing.To;
             string subject = mailing.Subject;
-            string Text = mailing.Text;
+            string Body = mailing.Text;
             MailMessage mailMessage = new MailMessage();
             mailMessage.To.Add(To);
             mailMessage.Subject = subject;
@@ -102,40 +94,7 @@ namespace PharmaDotCom.Controllers
             }
         }
 
-        // POST: Mailing/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,To,Subject,Text")] Mailing mailing)
-        {
-            if (id != mailing.Id)
-            {
-                return NotFound();
-            }
-
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(mailing);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!MailingExists(mailing.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }
-            return View(mailing);
-        }
+        
 
         // GET: Mailing/Delete/5
         public async Task<IActionResult> Delete(int? id)

@@ -14,7 +14,7 @@
     </div>
     <h5>Sign in</h5>
     <!-- form -->
-    <form asp-action="Login">
+    <form asp-action="Login" method="post">
         <div class="form-group">
             <input type="email" class="form-control" asp-for="Email" placeholder=" Enter Email">
             <span asp-validation-for="Email" class="text-danger"></span>

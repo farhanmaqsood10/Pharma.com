@@ -2,31 +2,13 @@
 
 @{
     ViewData["Title"] = "Details";
-    Layout = "~/Views/Shared/_PharmaDotComLayout.cshtml";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
 }
 
-<section class="page_breadcrumbs ds color parallax section_padding_top_75 section_padding_bottom_75">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12 text-center">
-                <h2>Details</h2>
-                <ol class="breadcrumb highlightlinks">
-                    <li>
-                        <a asp-action="Details" asp-controller="Quote">
-                            Quote Us
-                        </a>
-                    </li>
 
-                    <li class="active">Details</li>
-                </ol>
-            </div>
-        </div>
-    </div>
-</section>
-<h1>Details</h1>
+<h3>Details</h3>
 
 <div>
-    <h4>Quote</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -92,6 +74,7 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model.Id"></a>
+    <button class="btn btn-primary"><a asp-action="Index" class="text-white">Back to Quotes</a></button>
+    
 </div>
